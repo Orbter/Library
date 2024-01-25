@@ -67,14 +67,40 @@ body {
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 }
+.add:active {
+  background-color: rgba(41, 101, 252, 0.75);
+}
 .card-read {
   border-radius: 10px;
   border: 1px solid black;
-  width: 200px;
+  width: 42%;
   height: 50px;
   color: white;
   background-color: #50c878;
   font-size: 1.6rem;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
+}
+.card-read:active {
+  background-color: rgba(80, 200, 120, 0.75);
+}
+.remove {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 42%;
+  height: 50px;
+  color: white;
+  background-color: #f82727;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+.remove:active {
+  background-color: rgba(248, 39, 39, 0.75);
+}
+.button-container {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
