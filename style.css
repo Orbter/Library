@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100dvh;
+  font-family: "Roboto", sans-serif;
+}
+.main-head {
+  height: 50px;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f4f3ee;
+}
+.main-page {
+  background-color: #bcb8b1;
+  height: 100dvh;
+  flex-direction: column;
+}
+.flex {
+  display: flex;
+}
+.headline {
+  padding: 10px;
+  padding-bottom: 50px;
+}
+.book-card {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.card {
+  border: 1px solid black;
+  border-radius: 8px;
+  flex-direction: column;
+  width: 80%;
+  min-width: 300px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.logo img {
+  position: absolute;
+  height: 90px;
+  display: block; /* Removes any inherent inline spacing */
+  box-sizing: border-box; /* Include padding and borders in the element's size */
+  margin-top: 10px; /* Remove any default margin */
+  margin-left: 10px;
+  padding: 0; /* Remove any default padding */
+  left: 0;
+  top: 0;
+}
+.add {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 140px;
+  height: 45px;
+  color: white;
+  background-color: #2964fc;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+.card-read {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 200px;
+  height: 50px;
+  color: white;
+  background-color: #50c878;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
