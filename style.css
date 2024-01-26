@@ -14,7 +14,7 @@ body {
 }
 .main-page {
   background-color: #bcb8b1;
-  height: 100dvh;
+  min-height: 100vh; /* Minimum height, but can grow */
   flex-direction: column;
 }
 .flex {
@@ -29,8 +29,9 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 25px;
-  height: 100dvh;
+  min-height: 100vh; /* Minimum height, but can grow */
 }
+
 .card {
   border: 1px solid black;
   border-radius: 8px;
