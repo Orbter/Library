@@ -27,9 +27,9 @@ body {
 }
 .book-card {
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 25px;
+  height: 100dvh;
 }
 .card {
   border: 1px solid black;
