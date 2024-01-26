@@ -31,6 +31,48 @@
         <div><button class="add">New Book</button></div>
       </div>
     </header>
+    <div class="form">
+      <h2 class="form-header">Add New Book</h2>
+      <form class="book-form">
+        <div class="input-container">
+          <input
+            class="user-input"
+            type="text"
+            id="form-title"
+            placeholder="Title"
+            required
+          />
+        </div>
+        <div class="input-container">
+          <input
+            class="user-input"
+            type="text"
+            id="form-author"
+            placeholder="Author"
+            required
+          />
+        </div>
+        <div class="input-container">
+          <input
+            class="user-input"
+            type="number"
+            id="form-pages"
+            placeholder="Pages"
+            required
+          />
+        </div>
+        <div class="is-read flex">
+          <label for="read-checkbox" class="label-check flex"
+            >Have you read it?
+            <input type="checkbox" id="read-checkbox" class="check" />
+            <span class="custom-checkbox"></span>
+          </label>
+        </div>
+
+        <button class="submit" type="submit">Add Book</button>
+      </form>
+    </div>
+
     <main>
       <div class="main-page flex">
         <h1 class="headline">My Library</h1>
