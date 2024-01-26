@@ -82,11 +82,22 @@ body {
   font-size: 1.6rem;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease; /* Smooth transition for all changeable properties */
 }
-.card-read:active {
-  background-color: rgba(80, 200, 120, 0.75);
-  font-size: 1.4rem;
+
+.card-unread {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 42%;
+  height: 50px;
+  color: white;
+  background-color: #fa0d54;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease; /* Smooth transition for all changeable properties */
 }
+
 .remove {
   border-radius: 10px;
   border: 1px solid black;

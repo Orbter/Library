@@ -12,33 +12,40 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 addBook.addEventListener("click", function (event) {
+  invisible();
+});
+overlay.addEventListener("click", function (event) {
+  overlayInvisible();
+});
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const object = createObject();
+  const card = createCard(object);
+  bookCard.appendChild(card);
+  invisible();
+  overlayInvisible();
+});
+
+function overlayInvisible() {
+  if (!form.classList.contains("invisible")) {
+    form.classList.add("invisible");
+    overlay.classList.remove("overlay");
+  }
+}
+function invisible() {
   if (form.classList.contains("invisible")) {
     form.classList.remove("invisible");
     overlay.classList.add("overlay");
 
     document.body.appendChild(overlay);
   }
-});
-overlay.addEventListener("click", function (event) {
-  if (!form.classList.contains("invisible")) {
-    form.classList.add("invisible");
-    overlay.classList.remove("overlay");
-  }
-});
-
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  const object = createObject();
-  const card = createCard(object);
-  bookCard.appendChild(card);
-});
-//const book1 = new Book("Game Of Thrones", "George R. R. Martin", "694", true);
-
+}
 function createObject() {
   const title = document.getElementById("form-title").value;
   const author = document.getElementById("form-author").value;
   const pages = document.getElementById("form-pages").value;
-  const read = document.getElementById("read-checkbox").value;
+  const readCheckbox = document.getElementById("read-checkbox");
+  const read = readCheckbox.checked; // This will be true if checked, false if not
   const book1 = new Book(title, author, pages, read);
   myLibrary.push(book1);
   return book1;
@@ -64,13 +71,18 @@ function createCard(object) {
   //adding classes
   newCard.classList.add("card", "flex");
   newCard.id = myLibrary.length;
-  readButton.classList.add("card-read");
+  if (object.read === true) {
+    readButton.classList.add("card-read");
+  } else {
+    readButton.classList.add("card-unread");
+  }
   removeCard.classList.add("remove");
   cardButtons.classList.add("button-container", "flex");
   //adding the text
   readButton.innerText = "Read";
   removeCard.innerText = "Remove";
   removeCard.onclick = removeCardDiv;
+  readButton.onclick = isRead;
   titleH3.innerText = object.title;
   authorP.innerText = object.author;
   pagesP.innerText = object.pages;
@@ -83,3 +95,15 @@ function removeCardDiv(event) {
   currentCard.remove();
 }
 //const grandparentId = event.parentElement.parentElement.id;
+function isRead(event) {
+  const button = event.target;
+  if (button.classList.contains("card-read")) {
+    button.classList.remove("card-read");
+    button.classList.add("card-unread");
+    button.innerText = "Not Read";
+  } else {
+    button.classList.remove("card-unread");
+    button.classList.add("card-read");
+    button.innerText = "Read";
+  }
+}
