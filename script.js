@@ -63,7 +63,7 @@ function createCard(object) {
   cardButtons.append(readButton, removeCard);
   //adding classes
   newCard.classList.add("card", "flex");
-  newCard.id = object.title;
+  newCard.id = myLibrary.length;
   readButton.classList.add("card-read");
   removeCard.classList.add("remove");
   cardButtons.classList.add("button-container", "flex");
