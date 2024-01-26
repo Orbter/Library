@@ -2,6 +2,7 @@ const myLibrary = [];
 const form = document.querySelector(".form");
 const addBook = document.querySelector(".add");
 const overlay = document.createElement("div");
+const bookCard = document.querySelector(".book-card");
 overlay.classList.add("overlay");
 function Book(title, author, pages, read) {
   this.title = title;
@@ -26,21 +27,21 @@ overlay.addEventListener("click", function (event) {
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  const title = document.getElementById("form-title");
-  const author = document.getElementById("form-author");
-  const pages = document.getElementById("form-pages");
-  const read = document.getElementById("read-checkbox");
+  const title = document.getElementById("form-title").value;
+  const author = document.getElementById("form-author").value;
+  const pages = document.getElementById("form-pages").value;
+  const read = document.getElementById("read-checkbox").value;
   const book1 = new Book(title, author, pages, read);
   myLibrary.push(book1);
+  console.log(title);
+  console.log(myLibrary);
 });
 //const book1 = new Book("Game Of Thrones", "George R. R. Martin", "694", true);
 
-const book2 = new Book("The Hobbit", "John Ronald Reuel Tolkien", "320", true);
 function addBookToLibrary() {
-  myLibrary.push(book2);
-
-  console.log(myLibrary);
+  const newDIv = document.createElement("div");
+  newDIv.classList.add("card");
+  bookCard.appendChild(newDIv);
 }
 
 addBookToLibrary();
-console.log(Book);
