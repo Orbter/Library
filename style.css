@@ -263,4 +263,12 @@ header {
   .card {
     width: auto;
   }
+  .card-read:hover {
+    background-color: rgba(80, 200, 120, 0.75);
+    font-size: 1.4rem;
+  }
+  .card-unread:hover {
+    background-color: rgba(250, 13, 84, 0.75);
+    font-size: 1.4rem;
+  }
 }
