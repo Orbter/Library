@@ -4,6 +4,7 @@ const addBook = document.querySelector(".add");
 const overlay = document.createElement("div");
 const bookCard = document.querySelector(".book-card");
 let remove = document.querySelectorAll(".remove");
+const bookForm = document.querySelector(".book-form");
 overlay.classList.add("overlay");
 function Book(title, author, pages, read) {
   this.title = title;
@@ -24,6 +25,7 @@ form.addEventListener("submit", function (event) {
   bookCard.appendChild(card);
   invisible();
   overlayInvisible();
+  bookForm.reset();
 });
 
 function overlayInvisible() {
@@ -73,13 +75,15 @@ function createCard(object) {
   newCard.id = myLibrary.length;
   if (object.read === true) {
     readButton.classList.add("card-read");
+    readButton.innerText = "Read";
   } else {
     readButton.classList.add("card-unread");
+    readButton.innerText = "Not Read";
   }
   removeCard.classList.add("remove");
   cardButtons.classList.add("button-container", "flex");
   //adding the text
-  readButton.innerText = "Read";
+
   removeCard.innerText = "Remove";
   removeCard.onclick = removeCardDiv;
   readButton.onclick = isRead;
@@ -94,7 +98,6 @@ function removeCardDiv(event) {
   const currentCard = document.getElementById(grandparentId);
   currentCard.remove();
 }
-//const grandparentId = event.parentElement.parentElement.id;
 function isRead(event) {
   const button = event.target;
   if (button.classList.contains("card-read")) {
